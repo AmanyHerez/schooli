@@ -56,7 +56,11 @@ class _AddSchoolScreenState extends State<AddSchoolScreen> {
 
                     "var head = document.getElementsByClassName('flaticon-menu')[0];" +
                     "head.parentNode.removeChild(head);" +
-                    "var footer = document.getElementsByClassName('a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style')[0];" +
+                    "var social = document.getElementsByClassName('a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style')[0];" +
+                    "social.parentNode.removeChild(social);" +
+                    "var link = document.getElementsByTagName('a')[0];" +
+                    "link .parentNode.removeChild(link );" +
+                    "var footer = document.getElementsByClassName('apus-footer')[0];" +
                     "footer.parentNode.removeChild(footer);" +
                     "})()"
 

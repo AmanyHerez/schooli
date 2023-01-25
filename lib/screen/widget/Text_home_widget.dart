@@ -10,7 +10,7 @@ class TextHomeWidget extends StatelessWidget {
     return Text(title,
       style: TextStyle(
 fontWeight: FontWeight.bold,
-        fontSize: 30,
+        fontSize: 25,
       ),
 
     );

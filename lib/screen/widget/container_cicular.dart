@@ -5,8 +5,9 @@ class ContainerCircular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
-      height: 50,
+      margin: EdgeInsets.only(right: 20),
+      width: 70,
+      height: 70,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         color: Colors.black,

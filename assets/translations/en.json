@@ -1,9 +1,58 @@
 {
   "Home": "Menu Screen",
   "home_br": "Home",
+  "Our_Partners": "Our Partners",
+  "Our_Services": "Our Services",
+  "Parents_Sign_Up": "Parents Sign Up",
+  "School": "Schools",
+  "posts_grid": "Posts Grid",
+  "become_Partner": "Become A Partner\n schools Sign Up",
+
   "parent": "Parent",
   "add_School": "Add School",
   "contact": "Contact Screen",
-  "contact_us": "Contact Us"
+  "follow_us": "Follow Us",
+  "location": "2 ibrahim Nawar street -sixth District -behind Hassabo Hospital- Nasr City",
+  "contact_us": "Contact Us",
+  "student": "Student",
+  "student_info": "Student Information:",
+  "student_name": "Student name:",
+  "father_name": "Father name:",
+  "genral_info": "General information:",
+  "Extra_info": "Extra Information:",
+  "guardians": "Guardians",
+  "family_name": "Family name:",
+  "mother_name": "Mother name:",
+  "gardian_name": "Gardian name:",
+  "nationality": "Nationality:",
+  "next": "NEXT",
+  "cancel": "Cancel",
+  "ID": "ID/ Passport:",
+  "Second_language": "Second language:",
+  "Medical_problems": "Medical problems:",
+  "District": "District:",
+  "Street": "Street:",
+  "home_parent": "home:",
+  "Birth_Date": "Birth Date:",
+  "previous_school": "previous school:",
+  "Home_phone": "Home phone:",
+  "New_Class": "New Class:",
+  "previous_class": "previous class:",
+  "Desired_school": "Desired school:",
+  "Prev_Edu": "Prev. Educational system:",
+  "Required_Edu": "Required Educational system:",
+  "New_academic": "New academic year:",
+  "Region": "Region:",
+  "General": "General",
+  "Extra": "Extra",
+  "Schools": "School"
+
+
+
+
+
+
+
+
 
 }

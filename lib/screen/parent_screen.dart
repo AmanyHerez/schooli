@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:school/screen/widget/TextFieldWidget.dart';
 import 'package:school/screen/widget/container_parent_widget.dart';
 
@@ -8,85 +9,141 @@ import '../constant/constant.dart';
 
 class ParentScreen extends StatefulWidget {
   const ParentScreen({Key? key}) : super(key: key);
+
   @override
   _ParentScreenState createState() => _ParentScreenState();
 }
+
 class _ParentScreenState extends State<ParentScreen> {
   int _activeStepIndex = 0;
-  TextEditingController nameController = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController pass = TextEditingController();
-  TextEditingController address = TextEditingController();
-  TextEditingController pincode = TextEditingController();
+  TextEditingController studentNameController = TextEditingController();
+  TextEditingController fatherNameController = TextEditingController();
+  TextEditingController familyNameController = TextEditingController();
+  TextEditingController motherNameController = TextEditingController();
+  TextEditingController gradianNameController = TextEditingController();
+  TextEditingController nationalityController = TextEditingController();
+  TextEditingController IdController = TextEditingController();
+  TextEditingController secondLanguageController = TextEditingController();
+  TextEditingController medicalProblemsController = TextEditingController();
+  TextEditingController DistrictController = TextEditingController();
+  TextEditingController StreetController = TextEditingController();
+  TextEditingController homeController= TextEditingController();
+  TextEditingController GovController = TextEditingController();
+  TextEditingController BirthDateController = TextEditingController();
+  TextEditingController previousSchoolController = TextEditingController();
+  TextEditingController HomePhoneController = TextEditingController();
+  TextEditingController NewClassController = TextEditingController();
+  TextEditingController previousClassController = TextEditingController();
+  TextEditingController PrevEduController = TextEditingController();
+  TextEditingController RequiredEduController = TextEditingController();
+  TextEditingController NewAcademicController = TextEditingController();
+  TextEditingController RegionController = TextEditingController();
+
   List<Step> stepList() => [
+        Step(
+          state: _activeStepIndex <= 0 ? StepState.editing : StepState.complete,
+          isActive: _activeStepIndex >= 0,
+          title: const Text('student').tr(),
+          content: Container(
+            child: Column(
+              children: [
+                ContainerParentWidget(title: 'student_info'.tr()),
+                TextFieldWidget(
+                  controller: studentNameController,
+                  title: 'student_name'.tr(),
+                  textInputType: TextInputType.name,
+                ),
+                TextFieldWidget(
+                  controller: fatherNameController,
+                  title: 'father_name'.tr(),
+                  textInputType: TextInputType.name,
+                ),
+                TextFieldWidget(
+                  controller: familyNameController,
+                  title: 'family_name'.tr(),
+                  textInputType: TextInputType.name,
+                ),
+                TextFieldWidget(
+                  controller: motherNameController,
+                  title: 'mother_name'.tr(),
+                  textInputType: TextInputType.name,
+                ),
+                TextFieldWidget(
+                  controller: gradianNameController,
+                  title: 'gardian_name'.tr(),
+                  textInputType: TextInputType.name,
+                ),
+                TextFieldWidget(
+                  controller: nationalityController,
+                  title: 'nationality'.tr(),
+                  textInputType: TextInputType.text,
+                ),
+              ],
+            ),
+          ),
+        ),
+        Step(
+          state: _activeStepIndex <= 1 ? StepState.editing : StepState.complete,
+          isActive: _activeStepIndex >= 1,
+          title: const Text('General').tr(),
+          content: Container(
+            child: Column(
+              children: [
+                ContainerParentWidget(title: 'genral_info'.tr()),
+
+                TextFieldWidget( controller: IdController,title: 'ID'.tr(),textInputType: TextInputType.number,),
+                TextFieldWidget( controller: secondLanguageController,title: 'Second_language'.tr(),textInputType: TextInputType.text,),
+                TextFieldWidget( controller: medicalProblemsController,title: 'Medical_problems'.tr(),textInputType: TextInputType.text,),
+                TextFieldWidget( controller: DistrictController,title: 'District'.tr(),textInputType: TextInputType.text,),
+                TextFieldWidget( controller: StreetController,title: 'Street'.tr(),textInputType: TextInputType.streetAddress,),
+                TextFieldWidget( controller: homeController,title: 'home_parent'.tr(),textInputType: TextInputType.text,),
+                TextFieldWidget( controller: GovController,title: 'Gov'.tr(),textInputType: TextInputType.text,),
+
+              ],
+            ),
+          ),
+        ),
+        Step(
+          state: _activeStepIndex <= 2 ? StepState.editing : StepState.complete,
+          isActive: _activeStepIndex >= 2,
+          title: const Text('Extra').tr(),
+          content: Container(
+            child: Column(
+              children: [
+                ContainerParentWidget(title: 'Extra_info'.tr()),
+
+                TextFieldWidget( controller: BirthDateController,title: 'Birth_Date'.tr(),textInputType: TextInputType.number,),
+                TextFieldWidget( controller: previousSchoolController,title: 'previous_school'.tr(),textInputType: TextInputType.text,),
+                TextFieldWidget( controller: HomePhoneController,title: 'Home_phone'.tr(),textInputType: TextInputType.text,),
+                TextFieldWidget( controller: NewClassController,title: 'New_Class'.tr(),textInputType: TextInputType.text,),
+                TextFieldWidget( controller: previousClassController,title: 'previous_class'.tr(),textInputType: TextInputType.streetAddress,),
+
+
+              ],
+            ),
+          ),
+        ),
     Step(
-      state: _activeStepIndex <= 0 ? StepState.editing : StepState.complete,
-      isActive: _activeStepIndex >= 0,
-      title: const Text('Student '),
+      state: StepState.complete,
+      isActive: _activeStepIndex >= 3,
+      title: const Text('Schools').tr(),
       content: Container(
         child: Column(
           children: [
-            ContainerParentWidget(title: 'Student Information'),
+            ContainerParentWidget(title: 'Desired_school'.tr()),
 
-            TextFieldWidget( controller: nameController,title: 'Student name:'),
-            TextFieldWidget( controller: nameController,title: 'Father name:'),
-            TextFieldWidget( controller: nameController,title: 'Family name:'),
-            TextFieldWidget( controller: nameController,title: 'Mother Name:'),
-            TextFieldWidget( controller: nameController,title: 'Gardian name:'),
-            TextFieldWidget( controller: nameController,title: 'Nationality:'),
+            TextFieldWidget( controller: PrevEduController,title: 'Prev_Edu'.tr(),textInputType: TextInputType.number,),
+            TextFieldWidget( controller: RequiredEduController,title: 'Required_Edu'.tr(),textInputType: TextInputType.text,),
+            TextFieldWidget( controller: NewAcademicController,title: 'New_academic'.tr(),textInputType: TextInputType.text,),
+            TextFieldWidget( controller: RegionController,title: 'Region'.tr(),textInputType: TextInputType.text,),
+
+
 
           ],
         ),
       ),
     ),
-    Step(
-        state:
-        _activeStepIndex <= 1 ? StepState.editing : StepState.complete,
-        isActive: _activeStepIndex >= 1,
-        title: const Text('guardians '),
-        content: Container(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 8,
-              ),
-              TextField(
-                controller: address,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Full House Address',
-                ),
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              TextField(
-                controller: pincode,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Pin Code',
-                ),
-              ),
-            ],
-          ),
-        )),
-    Step(
-        state: StepState.complete,
-        isActive: _activeStepIndex >= 2,
-        title: const Text('School '),
-        content: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-
-                Text('Email: ${email.text}'),
-                const Text('Password: *****'),
-                Text('Address : ${address.text}'),
-                Text('PinCode : ${pincode.text}'),
-              ],
-            )))
-  ];
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -98,25 +155,51 @@ class _ParentScreenState extends State<ParentScreen> {
         leading: Icon(Icons.arrow_back),
       ),
       body: Theme(
-        data:  ThemeData(
-          colorScheme: Theme.of(context).colorScheme.copyWith(primary: mainColor),
+        data: ThemeData(
+          colorScheme:
+              Theme.of(context).colorScheme.copyWith(primary: mainColor),
+
         ),
         child: Stepper(
-          controlsBuilder: (context,_) {
-            return Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
 
-                  ElevatedButton(onPressed: (){}, child:const Text('NEXT'),),
-                  SizedBox(width: 10,),
-                  ElevatedButton(onPressed: (){}, child:const Text('Cancel'),),
+          controlsBuilder: (BuildContext context, ControlsDetails details) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextButton(
+                  onPressed: details.onStepContinue,
+                  child: const Text('next').tr(),
+                ),
+                TextButton(
+                  onPressed: details.onStepCancel,
+                  child: const Text('cancel').tr(),
 
-                ],
-              ),
+                ),
+              ],
             );
           },
+
+          // controlsBuilder: (context, _) {
+          //   return Padding(
+          //     padding: const EdgeInsets.only(top: 20),
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: <Widget>[
+          //         ElevatedButton(
+          //           onPressed: () {},
+          //           child: const Text('next').tr(),
+          //         ),
+          //         SizedBox(
+          //           width: 10,
+          //         ),
+          //         ElevatedButton(
+          //           onPressed: () {},
+          //           child: const Text('cancel').tr(),
+          //         ),
+          //       ],
+          //     ),
+          //   );
+          // },
           type: StepperType.horizontal,
           currentStep: _activeStepIndex,
           steps: stepList(),
