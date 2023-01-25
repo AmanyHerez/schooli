@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -50,12 +51,16 @@ class _AddSchoolScreenState extends State<AddSchoolScreen> {
           onPageFinished: (String url) {
             debugPrint('Page finished loading: $url');
             _controller
-                .runJavaScript("javascript:(function() { " +
-                    "var head = document.getElementsByTagName('header')[0];" +
+                .runJavaScript(
+                "javascript:(function() { " +
+
+                    "var head = document.getElementsByClassName('flaticon-menu')[0];" +
                     "head.parentNode.removeChild(head);" +
-                    "var footer = document.getElementsByTagName('footer')[0];" +
+                    "var footer = document.getElementsByClassName('a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style')[0];" +
                     "footer.parentNode.removeChild(footer);" +
-                    "})()")
+                    "})()"
+
+            )
                 .then((value) => debugPrint('Page finished loading Javascript'))
                 .catchError((onError) => debugPrint('$onError'));
           },
@@ -99,6 +104,7 @@ Page resource error:
         backgroundColor: mainColor,
         centerTitle: true,
         leading: Icon(Icons.arrow_back),
+        elevation: 0,
       ),
       body: WebViewWidget(controller: _controller),
     );
