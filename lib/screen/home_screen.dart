@@ -98,8 +98,8 @@ class HomeScreen extends StatelessWidget {
                   'Parents_Sign_Up'.tr(),
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
+
+                    fontSize: 20,
                   ),
                 ),
               ),
@@ -118,7 +118,7 @@ class HomeScreen extends StatelessWidget {
             Text(
               'School'.tr(),
               style: TextStyle(
-                fontWeight: FontWeight.bold,
+
                 fontSize: 18,
               ),
             ),
@@ -152,8 +152,8 @@ class HomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
+
+                    fontSize: 20,
                   ),
                 ),
               ),

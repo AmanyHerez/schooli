@@ -20,6 +20,7 @@ class ParentScreen extends StatefulWidget {
 
 class _ParentScreenState extends State<ParentScreen> {
   int _activeStepIndex = 0;
+  bool isCompleted=false;
   TextEditingController studentNameController = TextEditingController();
   TextEditingController fatherNameController = TextEditingController();
   TextEditingController familyNameController = TextEditingController();
@@ -271,19 +272,23 @@ class _ParentScreenState extends State<ParentScreen> {
         child: Stepper(
 
           controlsBuilder: (BuildContext context, ControlsDetails details) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                TextButton(
-                  onPressed: details.onStepContinue,
-                  child: const Text('next').tr(),
-                ),
-                TextButton(
-                  onPressed: details.onStepCancel,
-                  child: const Text('cancel').tr(),
+            return Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: details.onStepContinue,
+                    child:_activeStepIndex==3?Text('Submit').tr() :Text('next').tr(),
+                  ),
+                  SizedBox(width: 20,),
+                  ElevatedButton(
+                    onPressed: details.onStepCancel,
+                    child:  Text('cancel').tr(),
 
-                ),
-              ],
+                  ),
+                ],
+              ),
             );
           },
 
@@ -292,6 +297,7 @@ class _ParentScreenState extends State<ParentScreen> {
           currentStep: _activeStepIndex,
           steps: stepList(),
           onStepContinue: () {
+         //  final isLastStep = _activeStepIndex == stepList().length ;
             if (_activeStepIndex < (stepList().length - 1)) {
               setState(() {
                 _activeStepIndex += 1;

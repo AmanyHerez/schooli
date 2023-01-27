@@ -34,7 +34,7 @@ class _AddSchoolScreenState extends State<AddSchoolScreen> {
       params = const PlatformWebViewControllerCreationParams();
     }
     final WebViewController controller =
-        WebViewController.fromPlatformCreationParams(params);
+    WebViewController.fromPlatformCreationParams(params);
     // #enddocregion platform_features
 
     controller

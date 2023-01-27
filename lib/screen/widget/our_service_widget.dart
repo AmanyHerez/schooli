@@ -11,7 +11,9 @@ class OurServiceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsetsDirectional.only(start: 10),
-      child: Row(children: [
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
         Icon(Icons.forward,color: mainColor,),
         Expanded(child: Text(title,style: TextStyle(fontSize: 18,), maxLines: 2,))
       ],),
