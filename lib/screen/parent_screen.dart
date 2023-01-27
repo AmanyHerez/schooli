@@ -2,10 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:school/model/area.dart';
 import 'package:school/screen/widget/TextFieldWidget.dart';
 import 'package:school/screen/widget/container_parent_widget.dart';
 
 import '../constant/constant.dart';
+import '../model/city.dart';
+import '../model/gender.dart';
+import '../model/religion.dart';
 
 class ParentScreen extends StatefulWidget {
   const ParentScreen({Key? key}) : super(key: key);
@@ -38,6 +42,12 @@ class _ParentScreenState extends State<ParentScreen> {
   TextEditingController RequiredEduController = TextEditingController();
   TextEditingController NewAcademicController = TextEditingController();
   TextEditingController RegionController = TextEditingController();
+  TextEditingController ParentCellular1Controller= TextEditingController();
+  TextEditingController ParentCellular2Controller= TextEditingController();
+  Religion? selectedReligion;
+  Gender? selectedGender;
+ City? selectedCity;
+ Arae? selectedArae;
 
   List<Step> stepList() => [
         Step(
@@ -94,6 +104,78 @@ class _ParentScreenState extends State<ParentScreen> {
                 TextFieldWidget( controller: IdController,title: 'ID'.tr(),textInputType: TextInputType.number,),
                 TextFieldWidget( controller: secondLanguageController,title: 'Second_language'.tr(),textInputType: TextInputType.text,),
                 TextFieldWidget( controller: medicalProblemsController,title: 'Medical_problems'.tr(),textInputType: TextInputType.text,),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.zero,
+              border: Border.all(color: mainColor),
+
+            ),
+            child: DropdownButton<Religion>(
+              hint: Text('Religion').tr(),
+                isExpanded: true,
+                underline: SizedBox(),
+                value: selectedReligion,
+                items: religion.map((e) {
+                  return DropdownMenuItem<Religion>(
+                    value: e,
+                    child: Text(e.name),
+                  );
+                }).toList(),
+                onChanged: (v) {
+                  selectedReligion = v;
+
+                  setState(() {});
+                }),
+          ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.zero,
+                    border: Border.all(color: mainColor),
+
+                  ),
+                  child: DropdownButton<City>(
+                      hint: Text('City').tr(),
+                      isExpanded: true,
+                      underline: SizedBox(),
+                      value: selectedCity,
+                      items: city.map((e) {
+                        return DropdownMenuItem<City>(
+                          value: e,
+                          child: Text(e.name),
+                        );
+                      }).toList(),
+                      onChanged: (v) {
+                        selectedCity = v;
+
+                        setState(() {});
+                      }),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.zero,
+                    border: Border.all(color: mainColor),
+
+                  ),
+                  child: DropdownButton<Arae>(
+                      hint: Text('Arae').tr(),
+                      isExpanded: true,
+                      underline: SizedBox(),
+                      value: selectedArae,
+                      items: arae.map((e) {
+                        return DropdownMenuItem<Arae>(
+                          value: e,
+                          child: Text(e.name),
+                        );
+                      }).toList(),
+                      onChanged: (v) {
+                        selectedArae = v;
+
+                        setState(() {});
+                      }),
+                ),
                 TextFieldWidget( controller: DistrictController,title: 'District'.tr(),textInputType: TextInputType.text,),
                 TextFieldWidget( controller: StreetController,title: 'Street'.tr(),textInputType: TextInputType.streetAddress,),
                 TextFieldWidget( controller: homeController,title: 'home_parent'.tr(),textInputType: TextInputType.text,),
@@ -113,6 +195,32 @@ class _ParentScreenState extends State<ParentScreen> {
                 ContainerParentWidget(title: 'Extra_info'.tr()),
 
                 TextFieldWidget( controller: BirthDateController,title: 'Birth_Date'.tr(),textInputType: TextInputType.number,),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.zero,
+                    border: Border.all(color: mainColor),
+
+                  ),
+                  child: DropdownButton<Gender>(
+                      hint: Text('Gender').tr(),
+                      isExpanded: true,
+                      underline: SizedBox(),
+                      value: selectedGender,
+                      items: gender.map((e) {
+                        return DropdownMenuItem<Gender>(
+                          value: e,
+                          child: Text(e.name),
+                        );
+                      }).toList(),
+                      onChanged: (v) {
+                        selectedGender = v;
+
+                        setState(() {});
+                      }),
+                ),
+                TextFieldWidget( controller: ParentCellular1Controller,title: 'Parent_cellular1'.tr(),textInputType: TextInputType.numberWithOptions(),),
+                TextFieldWidget( controller: ParentCellular2Controller,title: 'Parent_cellular2'.tr(),textInputType: TextInputType.numberWithOptions(),),
                 TextFieldWidget( controller: previousSchoolController,title: 'previous_school'.tr(),textInputType: TextInputType.text,),
                 TextFieldWidget( controller: HomePhoneController,title: 'Home_phone'.tr(),textInputType: TextInputType.text,),
                 TextFieldWidget( controller: NewClassController,title: 'New_Class'.tr(),textInputType: TextInputType.text,),
@@ -179,27 +287,7 @@ class _ParentScreenState extends State<ParentScreen> {
             );
           },
 
-          // controlsBuilder: (context, _) {
-          //   return Padding(
-          //     padding: const EdgeInsets.only(top: 20),
-          //     child: Row(
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: <Widget>[
-          //         ElevatedButton(
-          //           onPressed: () {},
-          //           child: const Text('next').tr(),
-          //         ),
-          //         SizedBox(
-          //           width: 10,
-          //         ),
-          //         ElevatedButton(
-          //           onPressed: () {},
-          //           child: const Text('cancel').tr(),
-          //         ),
-          //       ],
-          //     ),
-          //   );
-          // },
+
           type: StepperType.horizontal,
           currentStep: _activeStepIndex,
           steps: stepList(),

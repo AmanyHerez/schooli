@@ -7,7 +7,7 @@ import 'package:school/screen/widget/listTile_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constant/constant.dart';
-final Uri _url = Uri.parse('https://flutter.dev');
+final Uri _url = Uri.parse(' ');
 class ContactScreen extends StatelessWidget {
   const ContactScreen({Key? key}) : super(key: key);
 
@@ -15,7 +15,7 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact Screen'),
+        title: Text(' '),
         backgroundColor: mainColor,
         centerTitle: true,
         elevation: 0,
@@ -65,7 +65,7 @@ class ContactScreen extends StatelessWidget {
                 DividerWidget(),
                 ListTileWidget(
                     title:
-                        '2 ibrahim Nawar street -sixth District -behind Hassabo Hospital- Nasr City',
+                    'location'.tr(),
                     icon: Icons.location_on),
                 SizedBox(height: 30,),
                 Padding(
@@ -80,30 +80,30 @@ class ContactScreen extends StatelessWidget {
 
                   ),
                 ),
-            Row(
-             children: [
-               IconButton(
-                 // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-                 icon: FaIcon(FontAwesomeIcons.facebook,size: 40,),
-                 onPressed: _launchUrl,
-               ),
-               IconButton(
-                 // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-                 icon: FaIcon(FontAwesomeIcons.twitter,size: 40,),
-                 onPressed: _launchUrl,
-               ),
-               IconButton(
-                 // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-                 icon: FaIcon(FontAwesomeIcons.whatsapp,size: 40,),
-                 onPressed: _launchUrl,
-               ),
-               IconButton(
-                 // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-                 icon: FaIcon(FontAwesomeIcons.telegram,size: 40,),
-                 onPressed: _launchUrl,
-               ),
-             ],
-            ),
+                Row(
+                  children: [
+                    IconButton(
+                      // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                      icon: FaIcon(FontAwesomeIcons.facebook,size: 40,),
+                      onPressed: _launchUrl,
+                    ),
+                    IconButton(
+                      // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                      icon: FaIcon(FontAwesomeIcons.twitter,size: 40,),
+                      onPressed: _launchUrl,
+                    ),
+                    IconButton(
+                      // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                      icon: FaIcon(FontAwesomeIcons.whatsapp,size: 40,),
+                      onPressed: _launchUrl,
+                    ),
+                    IconButton(
+                      // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+                      icon: FaIcon(FontAwesomeIcons.telegram,size: 40,),
+                      onPressed: _launchUrl,
+                    ),
+                  ],
+                ),
 
               ],
             ),
