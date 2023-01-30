@@ -3,7 +3,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:school/screen/main_screen.dart';
 import 'package:school/screen/splach_screen.dart';
-import 'package:wordpress_api/wordpress_api.dart';
+import 'package:school/testing_screen.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-      initialRoute: '/splach_screen',
+      home: TestingScreen(),
+      //initialRoute: '/splach_screen',
       routes: {
         '/splach_screen':(context)=>SplachScreen(),
         '/main_screen':(context)=>MainScreen(),
