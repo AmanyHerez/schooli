@@ -42,11 +42,15 @@ class DioHelper {
   //   //return response.data['token'];
   // }
 
-  ParentRegister() async {
+  ParentRegister(String studentName,String fatherName,String familyName,String motherName,String gradianName,String nationalityName,) async {
     var url = Uri.parse(baseUrl);
     Map<String, dynamic> mapData = {
-      "0": 'first name test',
-      "1": "last name test",
+      "0": studentName,
+      "4": fatherName,
+      "6": familyName,
+      "1": motherName,
+      "5": gradianName,
+      "3": nationalityName,
     };
     // Map<String, dynamic> mapHeaders = {
     //   'lang': 'en',

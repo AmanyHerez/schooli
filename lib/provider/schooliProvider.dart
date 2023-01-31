@@ -14,6 +14,14 @@ class SchooliProvider extends ChangeNotifier {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+
+  TextEditingController studentNameController = TextEditingController();
+  TextEditingController fatherNameController = TextEditingController();
+  TextEditingController familyNameController = TextEditingController();
+  TextEditingController motherNameController = TextEditingController();
+  TextEditingController gradianNameController = TextEditingController();
+  TextEditingController nationalityController = TextEditingController();
+
   // login() async {
   //   String token = await DioHelper.dioHelper.login(
   //     emailController.text,
@@ -33,10 +41,12 @@ class SchooliProvider extends ChangeNotifier {
 
   ParentRegisterProvider() async {
     await DioHelper.dioHelper.ParentRegister(
-        // nameController.text,
-        // emailRegController.text,
-        // passwordRegController.text,
-        // phoneController.text,
+      studentNameController.text,
+      fatherNameController.text,
+      familyNameController.text,
+      motherNameController.text,
+      gradianNameController.text,
+      nationalityController.text,
     );
   }
 
