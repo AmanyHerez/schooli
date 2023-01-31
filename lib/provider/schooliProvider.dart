@@ -22,22 +22,27 @@ class SchooliProvider extends ChangeNotifier {
   TextEditingController gradianNameController = TextEditingController();
   TextEditingController nationalityController = TextEditingController();
 
-  // login() async {
-  //   String token = await DioHelper.dioHelper.login(
-  //     emailController.text,
-  //     passwordController.text,
-  //   );
-  //   SpHelper.spHelper.SaveToken(token);
-  //
-  //   log(" token :${token}");
-  // }
+  TextEditingController IdController = TextEditingController();
+  TextEditingController secondLanguageController = TextEditingController();
+  TextEditingController medicalProblemsController = TextEditingController();
+  TextEditingController DistrictController = TextEditingController();
+  TextEditingController StreetController = TextEditingController();
+  TextEditingController homeController = TextEditingController();
+  TextEditingController GovController = TextEditingController();
 
-  /////////////////////***********Register*************/////////////////////
-  GlobalKey<FormState> RegisterKey = GlobalKey();
-  TextEditingController emailRegController = TextEditingController();
-  TextEditingController passwordRegController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
+  TextEditingController BirthDateController = TextEditingController();
+  TextEditingController ParentCellular1Controller = TextEditingController();
+  TextEditingController ParentCellular2Controller = TextEditingController();
+  TextEditingController previousSchoolController = TextEditingController();
+  TextEditingController HomePhoneController = TextEditingController();
+  TextEditingController NewClassController = TextEditingController();
+  TextEditingController previousClassController = TextEditingController();
+
+  TextEditingController PrevEduController = TextEditingController();
+  TextEditingController RequiredEduController = TextEditingController();
+  TextEditingController NewAcademicController = TextEditingController();
+  TextEditingController RegionController = TextEditingController();
+
 
   ParentRegisterProvider() async {
     await DioHelper.dioHelper.ParentRegister(
@@ -47,6 +52,24 @@ class SchooliProvider extends ChangeNotifier {
       motherNameController.text,
       gradianNameController.text,
       nationalityController.text,
+      IdController .text,
+      secondLanguageController.text,
+      medicalProblemsController.text,
+      DistrictController.text,
+      StreetController.text,
+      homeController.text,
+      GovController.text,
+      BirthDateController.text,
+      ParentCellular1Controller.text,
+      ParentCellular2Controller.text,
+      previousSchoolController.text,
+      HomePhoneController.text,
+      NewClassController.text,
+      previousClassController.text,
+      PrevEduController.text,
+      RequiredEduController.text,
+      NewAcademicController.text,
+      RegionController.text,
     );
   }
 

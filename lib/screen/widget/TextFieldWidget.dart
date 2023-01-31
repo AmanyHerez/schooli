@@ -6,7 +6,7 @@ class TextFieldWidget extends StatelessWidget {
   Widget? suffix;
   final String? title;
   final Function? validator;
-  final Function?  onChanged;
+  // final Function?  onChanged;
   bool? obscureText;
 
   TextFieldWidget(
@@ -14,14 +14,14 @@ class TextFieldWidget extends StatelessWidget {
          this.validator,
         required this.controller,
         this.suffix,
-        this. onChanged,
+        // this. onChanged,
 
         this.textInputType});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged:(x) =>  onChanged!(x) ,
+      // onChanged:(x) =>  onChanged!(x) ,
 
       keyboardType: textInputType,
       controller: controller,

@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
 import 'package:school/provider/schooliProvider.dart';
+import 'package:school/router.dart';
 import 'package:school/screen/main_screen.dart';
 import 'package:school/screen/parent_screen.dart';
 import 'package:school/screen/splach_screen.dart';
@@ -37,12 +38,13 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
-        home: ParentScreen(),
+        navigatorKey: AppRouter.navKey,
+        home:SplachScreen(),
         //initialRoute: '/splach_screen',
-        routes: {
-          '/splach_screen':(context)=>SplachScreen(),
-          '/main_screen':(context)=>MainScreen(),
-        },
+        // routes: {
+        //   '/splach_screen':(context)=>SplachScreen(),
+        //   '/main_screen':(context)=>MainScreen(),
+        // },
       ),
     );
   }

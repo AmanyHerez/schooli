@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:school/router.dart';
+import 'package:school/screen/main_screen.dart';
 
 import '../constant/constant.dart';
 class SplachScreen extends StatefulWidget {
@@ -14,7 +16,7 @@ class _SplachScreenState extends State<SplachScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/main_screen');
+      AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
     });
   }
   @override
