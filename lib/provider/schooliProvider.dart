@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 
 import '../data/dio_helper.dart';
+import '../model/area.dart';
+import '../model/city.dart';
+import '../model/gender.dart';
+import '../model/religion.dart';
 
 
 class SchooliProvider extends ChangeNotifier {
@@ -11,9 +15,6 @@ class SchooliProvider extends ChangeNotifier {
 
   //***************login************************//
   GlobalKey<FormState> loginKey = GlobalKey();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-
 
   TextEditingController studentNameController = TextEditingController();
   TextEditingController fatherNameController = TextEditingController();
@@ -43,6 +44,10 @@ class SchooliProvider extends ChangeNotifier {
   TextEditingController NewAcademicController = TextEditingController();
   TextEditingController RegionController = TextEditingController();
 
+  Gender? selectedGender;
+  Religion? selectedReligion;
+  City? selectedCity;
+  Arae? selectedArae;
 
   ParentRegisterProvider() async {
     await DioHelper.dioHelper.ParentRegister(
@@ -55,11 +60,15 @@ class SchooliProvider extends ChangeNotifier {
       IdController .text,
       secondLanguageController.text,
       medicalProblemsController.text,
+      selectedReligion.toString(),
+      selectedCity.toString(),
+      selectedArae.toString(),
       DistrictController.text,
       StreetController.text,
       homeController.text,
       GovController.text,
       BirthDateController.text,
+      selectedGender.toString(),
       ParentCellular1Controller.text,
       ParentCellular2Controller.text,
       previousSchoolController.text,

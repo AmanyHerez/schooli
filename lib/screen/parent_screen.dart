@@ -24,10 +24,7 @@ class _ParentScreenState extends State<ParentScreen> {
   int _activeStepIndex = 0;
   bool isCompleted = false;
 
-  Religion? selectedReligion;
-  Gender? selectedGender;
-  City? selectedCity;
-  Arae? selectedArae;
+
 
   List<Step> stepList() => [
         Step(
@@ -111,7 +108,7 @@ class _ParentScreenState extends State<ParentScreen> {
                           hint: Text('Religion').tr(),
                           isExpanded: true,
                           underline: SizedBox(),
-                          value: selectedReligion,
+                          value: provider.selectedReligion,
                           items: religion.map((e) {
                             return DropdownMenuItem<Religion>(
                               value: e,
@@ -119,7 +116,7 @@ class _ParentScreenState extends State<ParentScreen> {
                             );
                           }).toList(),
                           onChanged: (v) {
-                            selectedReligion = v;
+                            provider.selectedReligion = v;
 
                             setState(() {});
                           }),
@@ -135,7 +132,7 @@ class _ParentScreenState extends State<ParentScreen> {
                           hint: Text('City').tr(),
                           isExpanded: true,
                           underline: SizedBox(),
-                          value: selectedCity,
+                          value: provider.selectedCity,
                           items: city.map((e) {
                             return DropdownMenuItem<City>(
                               value: e,
@@ -143,7 +140,7 @@ class _ParentScreenState extends State<ParentScreen> {
                             );
                           }).toList(),
                           onChanged: (v) {
-                            selectedCity = v;
+                            provider.selectedCity = v;
 
                             setState(() {});
                           }),
@@ -159,7 +156,7 @@ class _ParentScreenState extends State<ParentScreen> {
                           hint: Text('Arae').tr(),
                           isExpanded: true,
                           underline: SizedBox(),
-                          value: selectedArae,
+                          value: provider.selectedArae,
                           items: arae.map((e) {
                             return DropdownMenuItem<Arae>(
                               value: e,
@@ -167,7 +164,7 @@ class _ParentScreenState extends State<ParentScreen> {
                             );
                           }).toList(),
                           onChanged: (v) {
-                            selectedArae = v;
+                            provider.selectedArae = v;
 
                             setState(() {});
                           }),
@@ -224,7 +221,7 @@ class _ParentScreenState extends State<ParentScreen> {
                           hint: Text('Gender').tr(),
                           isExpanded: true,
                           underline: SizedBox(),
-                          value: selectedGender,
+                          value: provider.selectedGender,
                           items: gender.map((e) {
                             return DropdownMenuItem<Gender>(
                               value: e,
@@ -232,7 +229,7 @@ class _ParentScreenState extends State<ParentScreen> {
                             );
                           }).toList(),
                           onChanged: (v) {
-                            selectedGender = v;
+                            provider.selectedGender = v;
 
                             setState(() {});
                           }),
@@ -338,6 +335,30 @@ class _ParentScreenState extends State<ParentScreen> {
                         onPressed: _activeStepIndex == 3
                             ? () {
                                 provider.ParentRegisterProvider();
+                                provider.studentNameController.text=" ";
+                                provider.fatherNameController.text=" ";
+                                provider.familyNameController.text=" ";
+                                provider.motherNameController.text=" ";
+                                provider.gradianNameController.text=" ";
+                                provider.nationalityController.text=" ";
+                                provider.IdController.text=" ";
+                                provider.secondLanguageController.text=" ";
+                                provider.medicalProblemsController.text=" ";
+                                provider.DistrictController.text=" ";
+                                provider.StreetController.text=" ";
+                                provider.homeController.text=" ";
+                                provider.GovController.text=" ";
+                                provider.BirthDateController.text=" ";
+                                provider.ParentCellular1Controller.text=" ";
+                                provider.ParentCellular2Controller.text=" ";
+                                provider.previousSchoolController.text=" ";
+                                provider.HomePhoneController.text=" ";
+                                provider.NewClassController.text=" ";
+                                provider.previousClassController.text=" ";
+                                provider.PrevEduController.text=" ";
+                                provider.RequiredEduController.text=" ";
+                                provider.NewAcademicController.text=" ";
+                                provider.RegionController.text=" ";
                               }
                             : details.onStepContinue,
                         child: _activeStepIndex == 3
