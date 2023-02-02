@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:school/constant/constant.dart';
 
+import '../model/artical_model.dart';
 import '../model/submit_form.dart';
 
 class DioHelper {
@@ -15,29 +16,17 @@ class DioHelper {
   //     headers: {
   //       'Content-Type': 'application/json',
   //     }));
-
-  // login(String email, String password) async {
-  //   // String baseUrl='https://student.valuxapps.com/api/';
-  //   // String userEndPoint = 'login';
-  //   var url = Uri.parse(baseUrl);
-  //   Map<String, dynamic> mapData = {
-  //     'email': email,
-  //     'password': password,
-  //   };
-  //   Map<String, dynamic> mapHeaders = {
-  //     'lang': 'en',
-  //     'Content-Type': 'application/json',
-  //   };
+  // getArticel() async {
+  //   var url = Uri.parse(baseUrlArticle);
   //
-  //   Response response = await dio.post(url.toString(),
-  //       data: mapData, options: Options(headers: mapHeaders));
-  //   SubmitFormModel submitFormModel = SubmitFormModel.fromJson(response.data);
-  //   //print(response.data);
-  //   // print(" token :${loginModel.data!.token}");
-  //   //print(response.data['data']);
   //
-  //   return submitFormModel.status;
-  //   //return response.data['token'];
+  //   Response response =
+  //   await dio.get(url.toString(), );
+  //   ArticleModel articleModel = ArticleModel.fromJson(response.data);
+  //
+  //   print(articleModel.status);
+  //   print(articleModel.date);
+  //   return articleModel;
   // }
 
   ParentRegister(
