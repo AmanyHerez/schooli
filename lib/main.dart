@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
         navigatorKey: AppRouter.navKey,
-        home:TestingScreen(),
+        home:SplachScreen(),
         //initialRoute: '/splach_screen',
         // routes: {
         //   '/splach_screen':(context)=>SplachScreen(),
